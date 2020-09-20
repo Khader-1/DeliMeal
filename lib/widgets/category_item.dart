@@ -12,9 +12,12 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) => CategoryMeals(_category),
-        ));
+        Navigator.of(context).pushNamed(
+          CategoryMeals.route,
+          arguments: {
+            'category': _category,
+          },
+        );
       },
       borderRadius: BorderRadius.circular(15),
       splashColor: Theme.of(context).primaryColor,
