@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import './screens/category_meals.dart';
 import './screens/categories_screens.dart';
@@ -33,6 +34,16 @@ class MyApp extends StatelessWidget {
       routes: {
         CategoryMeals.route: (ctx) => CategoryMeals(),
       },
+      localizationsDelegates: [
+        GlobalCupertinoLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('ar', 'AE'),
+        Locale('en', 'US'),
+      ],
+      locale: Locale('en', 'AE'),
     );
   }
 }
