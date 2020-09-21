@@ -26,8 +26,9 @@ class Meal {
   final bool isLactoseFree;
   final bool isVegan;
   final bool isVegetarian;
+  bool _isFavorite = false;
 
-  const Meal({
+  Meal({
     @required this.id,
     @required this.categories,
     @required this.title,
@@ -42,4 +43,12 @@ class Meal {
     @required this.isVegan,
     @required this.isVegetarian,
   });
+
+  bool get isFavorite {
+    return this._isFavorite;
+  }
+
+  void switchFavorite() {
+    this._isFavorite = !this._isFavorite;
+  }
 }
